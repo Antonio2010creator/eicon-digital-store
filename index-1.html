@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Eicon Web Solutions — produtos digitais úteis e modelos profissionais.">
+<title>Eicon Web Solutions | Loja Digital</title>
+<style>
+:root{--bg:#f5f7fb;--ink:#172033;--muted:#647089;--brand:#2457d6;--brand2:#173da0;--line:#e4e9f2;--white:#fff;--green:#16834a}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+header{background:#101a32;color:white;padding:18px 5%;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.logo{font-size:1.25rem;font-weight:800;letter-spacing:.2px}.logo span{color:#83a8ff}
+nav{display:flex;gap:16px;align-items:center}nav a{color:#eaf0ff;text-decoration:none;font-weight:600}
+.hero{padding:58px 5%;background:linear-gradient(120deg,#14264f,#2457d6);color:white}
+.hero .wrap{max-width:1100px;margin:auto}.eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:.75rem;color:#c9d8ff;font-weight:bold}
+h1{font-size:clamp(2rem,6vw,3.5rem);line-height:1.08;margin:12px 0}.hero p{max-width:650px;color:#e4ebff;font-size:1.08rem}
+.btn{border:0;border-radius:9px;padding:12px 17px;font-weight:700;cursor:pointer;background:var(--brand);color:white;text-decoration:none;display:inline-block}
+.btn:hover{background:var(--brand2)}.btn.light{background:white;color:#173da0}
+main{max-width:1100px;margin:34px auto;padding:0 5%}.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap}
+h2{margin:0 0 5px;font-size:1.7rem}.muted{color:var(--muted)}
+.tools{display:flex;gap:9px;flex-wrap:wrap;margin:20px 0}
+input,select,textarea{font:inherit;border:1px solid #ccd5e4;border-radius:8px;padding:11px;background:white;color:var(--ink);width:100%}
+.tools input{max-width:340px}.tools select{max-width:200px}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:22px;align-items:start}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.card,.panel{background:white;border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:0 5px 20px #14264f0a}
+.product-icon{height:125px;border-radius:10px;background:linear-gradient(135deg,#e7edff,#f3f6ff);display:grid;place-items:center;font-size:2.7rem;margin-bottom:14px}
+.card h3{margin:4px 0}.price{font-size:1.25rem;font-weight:800;color:var(--brand);margin:10px 0}
+.card p{color:var(--muted);font-size:.93rem;min-height:45px}
+.card .btn{width:100%}.panel{position:sticky;top:12px}.panel h2{font-size:1.35rem}
+.cart-item{border-bottom:1px solid var(--line);padding:10px 0;font-size:.92rem}.cart-row{display:flex;justify-content:space-between;gap:8px;align-items:center}
+.qty{display:flex;align-items:center;gap:8px}.qty button{border:1px solid var(--line);background:#f6f8fc;border-radius:6px;padding:3px 9px}
+.total{display:flex;justify-content:space-between;font-size:1.15rem;font-weight:800;padding:14px 0}
+form{display:grid;gap:10px;margin-top:15px}label{font-size:.88rem;font-weight:700}
+.small{font-size:.8rem;color:var(--muted)}footer{margin-top:45px;padding:28px 5%;background:#101a32;color:#dce5ff;text-align:center}
+.empty{color:var(--muted);font-size:.92rem}.notice{background:#fff8e8;border:1px solid #f1dfb5;padding:12px;border-radius:9px;font-size:.84rem;color:#6e531b;margin-top:12px}
+@media(max-width:800px){.layout{grid-template-columns:1fr}.panel{position:static}.hero{padding:44px 5%}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">EICON <span>WEB SOLUTIONS</span></div>
+  <nav><a href="#catalogo">Catálogo</a><a href="#carrinho">Carrinho</a></nav>
+</header>
+<section class="hero">
+ <div class="wrap">
+  <div class="eyebrow">Soluções digitais práticas</div>
+  <h1>Ferramentas digitais para organizar as tuas ideias.</h1>
+  <p>Explora os nossos materiais digitais, prepara as tuas encomendas e recebe o atendimento diretamente pelo WhatsApp.</p>
+  <a class="btn light" href="#catalogo">Ver produtos</a>
+ </div>
+</section>
+<main>
+ <div class="section-head" id="catalogo">
+  <div><h2>Catálogo digital</h2><div class="muted">Materiais digitais originais da Eicon Web Solutions.</div></div>
+ </div>
+ <div class="tools">
+  <input id="search" type="search" placeholder="Pesquisar produto..." aria-label="Pesquisar produto">
+  <select id="filter" aria-label="Filtrar produtos"><option value="todos">Todas as categorias</option><option value="organização">Organização</option><option value="carreira">Carreira</option></select>
+ </div>
+ <div class="layout">
+  <section class="products" id="products">
+   <article class="card" data-name="planner semanal" data-category="organização">
+    <div class="product-icon" aria-hidden="true">🗓️</div><h3>Planner Semanal</h3>
+    <p>Organiza prioridades, tarefas diárias, notas e revisão da semana num único documento.</p>
+    <div class="price">US$ 3,00</div><button class="btn" onclick="addToCart('planner')">Adicionar ao carrinho</button>
+   </article>
+   <article class="card" data-name="pack modelos cv curriculo" data-category="carreira">
+    <div class="product-icon" aria-hidden="true">📄</div><h3>Pack de Modelos de CV</h3>
+    <p>Três modelos de currículo: clássico, moderno e para estudantes/primeira oportunidade.</p>
+    <div class="price">US$ 4,00</div><button class="btn" onclick="addToCart('cv')">Adicionar ao carrinho</button>
+   </article>
+  </section>
+  <aside class="panel" id="carrinho">
+   <h2>O teu carrinho</h2><div id="cartItems" class="empty">Ainda não adicionaste produtos.</div>
+   <div class="total"><span>Total estimado</span><span id="total">US$ 0,00</span></div>
+   <form id="orderForm">
+    <label for="customer">Nome</label><input id="customer" required placeholder="O teu nome">
+    <label for="contact">Contacto</label><input id="contact" required placeholder="Número de telefone ou WhatsApp">
+    <label for="notes">Observações (opcional)</label><textarea id="notes" rows="2" placeholder="Alguma informação adicional?"></textarea>
+    <button class="btn" type="submit">Preparar encomenda no WhatsApp</button>
+   </form>
+   <div class="notice">A encomenda será preparada no WhatsApp. O pagamento e a entrega dos ficheiros são combinados manualmente. Esta página não processa pagamentos.</div>
+  </aside>
+ </div>
+</main>
+<footer><strong>Eicon Web Solutions</strong><br><span class="small">Produtos digitais • Atendimento por WhatsApp</span></footer>
+<script>
+const products={planner:{name:"Planner Semanal",price:3},cv:{name:"Pack de Modelos de CV",price:4}};
+const cart={};
+const money=n=>"US$ "+n.toFixed(2);
+function addToCart(id){cart[id]=(cart[id]||0)+1;renderCart()}
+function changeQty(id,delta){cart[id]=(cart[id]||0)+delta;if(cart[id]<=0)delete cart[id];renderCart()}
+function renderCart(){
+ const box=document.getElementById("cartItems");const ids=Object.keys(cart);
+ if(!ids.length){box.className="empty";box.textContent="Ainda não adicionaste produtos."}
+ else{box.className="";box.innerHTML=ids.map(id=>`<div class="cart-item"><div class="cart-row"><strong>${products[id].name}</strong><strong>${money(products[id].price*cart[id])}</strong></div><div class="cart-row"><span class="qty"><button type="button" aria-label="Diminuir" onclick="changeQty('${id}',-1)">−</button>${cart[id]}<button type="button" aria-label="Aumentar" onclick="changeQty('${id}',1)">+</button></span><span class="small">${money(products[id].price)} cada</span></div></div>`).join("")}
+ const total=ids.reduce((sum,id)=>sum+products[id].price*cart[id],0);document.getElementById("total").textContent=money(total);
+}
+document.getElementById("search").addEventListener("input",filterProducts);
+document.getElementById("filter").addEventListener("change",filterProducts);
+function filterProducts(){const q=document.getElementById("search").value.toLowerCase();const cat=document.getElementById("filter").value;document.querySelectorAll("#products .card").forEach(card=>{card.hidden=!(card.dataset.name.includes(q)&&(cat==="todos"||card.dataset.category===cat))})}
+document.getElementById("orderForm").addEventListener("submit",e=>{
+ e.preventDefault();const ids=Object.keys(cart);if(!ids.length){alert("Adiciona pelo menos um produto ao carrinho.");return}
+ const name=document.getElementById("customer").value.trim(),contact=document.getElementById("contact").value.trim(),notes=document.getElementById("notes").value.trim();
+ const lines=ids.map(id=>`- ${products[id].name} x${cart[id]}: ${money(products[id].price*cart[id])}`);
+ const total=ids.reduce((sum,id)=>sum+products[id].price*cart[id],0);
+ const message=`Olá, Eicon Web Solutions! Quero fazer uma encomenda.\nNome: ${name}\nContacto: ${contact}\nProdutos:\n${lines.join("\n")}\nTotal estimado: ${money(total)}\nObservações: ${notes||"Nenhuma"}`;
+ // Substituir o número de exemplo pelo número WhatsApp comercial autorizado, com indicativo do país e sem + ou espaços.
+ const whatsappNumber="244000000000";
+ if(whatsappNumber==="244000000000"){alert("Antes de receber encomendas, substitui o número de exemplo 244000000000 no código pelo número WhatsApp comercial autorizado.");return}
+ window.open("https://wa.me/"+whatsappNumber+"?text="+encodeURIComponent(message),"_blank");
+});
+</script>
+</body>
+</html>
